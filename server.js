@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const uniqID = require('uniqid');
 
 const fs = require("fs");
 
@@ -28,13 +29,14 @@ app.post(`/api/notes`, (req, res) => {
     res.json({message: `New note is created: ${req.body.title}`});
     console.log(req.body);
     const newNote = req.body;
+    newNote.id = uniqID();
     
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err){
             console.log(err);
         } else {
         const notes = JSON.parse(data);
-        notes.push(newNote)
+        notes.push(newNote);
         const updatedNotes = JSON.stringify(notes); 
         fs.writeFile('./db/db.json', updatedNotes, 'utf8', function (err) {
             if (err) throw err;
@@ -42,6 +44,8 @@ app.post(`/api/notes`, (req, res) => {
         });
     }});
 });
+
+app.delete
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
