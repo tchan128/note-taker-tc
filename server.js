@@ -24,9 +24,24 @@ app.get(`/api/notes`, (req, res) =>
     res.json(notesData)
 );
 
-app.post(`/api/notes`, (req, res) => 
-    res.json({message: `New note is created: ${req.body.title}`})
-);
+app.post(`/api/notes`, (req, res) => {
+    res.json({message: `New note is created: ${req.body.title}`});
+    console.log(req.body);
+    const newNote = req.body;
+    
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        if (err){
+            console.log(err);
+        } else {
+        const notes = JSON.parse(data);
+        notes.push(newNote)
+        const updatedNotes = JSON.stringify(notes); 
+        fs.writeFile('./db/db.json', updatedNotes, 'utf8', function (err) {
+            if (err) throw err;
+            console.log('Saved!');
+        });
+    }});
+});
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
