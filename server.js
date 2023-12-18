@@ -1,3 +1,4 @@
+// Requiring modules that are needed for prohect
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -7,15 +8,20 @@ const fs = require("fs");
 
 const PORT = 3001; 
 
+// Requiring the database
 const notesData = require('./db/db.json');
 
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json())
 
+// GET request to show the homepage of note taker
+
 app.get("/", (req, res) => 
     res.sendFile(path.join(__dirname), 'public/index.html')
 );
+
+// GET request to show the actual app once user goes to /notes 
 
 app.get(`/notes`, (req, res) =>
     res.sendFile(path.join(__dirname, 'public/notes.html'))
@@ -24,6 +30,8 @@ app.get(`/notes`, (req, res) =>
 app.get(`/api/notes`, (req, res) =>
     res.json(notesData)
 );
+
+// POST request for users to add a new note and display new note
 
 app.post(`/api/notes`, (req, res) => {
     console.log(req.body);
@@ -42,6 +50,8 @@ app.post(`/api/notes`, (req, res) => {
         });
     }});
 });
+
+// DELETE request to remove a specific note from app
 
 app.delete('/api/notes/:id', (req, res) => {
     res.json({message: `Note has been deleted`});

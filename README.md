@@ -52,15 +52,15 @@ Please view here for a demo of the app: https://share.vidyard.com/watch/j6uJ5ACE
 
 1. Homepage when user accesses http://localhost:3001/
 
-![Homepage](<Screenshot 2023-12-18 at 5.00.07 PM.png>)
+![Homepage](<./asset/Screenshot 2023-12-18 at 5.00.07 PM.png>)
 
 2. Viewing pre-existing notes 
 
-![Existing Notes](<Screenshot 2023-12-18 at 5.01.00 PM.png>)
+![Existing Notes](<./asset/Screenshot 2023-12-18 at 5.01.00 PM.png>)
 
 3. Creating a new note
 
-![New Note](<Screenshot 2023-12-18 at 5.01.37 PM.png>)
+![New Note](<./asset/Screenshot 2023-12-18 at 5.01.37 PM.png>)
 
 ## Contributions
 
@@ -94,4 +94,4 @@ For any questions you have, please do not hesitate to reach out to me.
 - Github Username: tchan128
 - Email: tchan12899@gmail.com
 - Github Repo: https://github.com/tchan128/note-taker-tc
-- Deployed URL: 
+- Deployed URL: In Progress
