@@ -35,17 +35,25 @@ app.post(`/api/notes`, (req, res) => {
         if (err){
             console.log(err);
         } else {
-        const notes = JSON.parse(data);
-        notes.push(newNote);
-        const updatedNotes = JSON.stringify(notes); 
-        fs.writeFile('./db/db.json', updatedNotes, 'utf8', function (err) {
+        notesData.push(newNote);
+        fs.writeFile('./db/db.json', JSON.stringify(notesData), 'utf8', function (err) {
             if (err) throw err;
             console.log('Saved!');
         });
     }});
 });
 
-app.delete
+app.delete('/api/notes/:id', (req, res) => {
+    res.json({message: `Note has been deleted`});
+    let noteID = req.params.id
+    console.log(`From key: ${noteID}`);
+    
+    for (let i = 0; i < notesData.length; i++) {
+        if (notesData[i].id === noteID) {
+            notesData.splice(i, i+1)
+        }
+    }
+});
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
