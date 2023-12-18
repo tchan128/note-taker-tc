@@ -1,6 +1,22 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text"
+        "title":"Make Dinner",
+        "text":"Chicken Alfredo at 7:00 PM"
+    },
+    {
+        "title":"Presentation",
+        "text":"Company wide presentation on December 20"
+    },
+    {
+        "title":"Ultrasound",
+        "text":"Wrist Ultrasound at 11:30 AM"
+    },
+    {
+        "title":"Challenge 11",
+        "text":"Uoft Coding bootcamp Challenge due"
+    },
+    {
+        "title":"Call Mom",
+        "text":"Call Mom for Birthday (13 hours ahead)"
     }
 ]
