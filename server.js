@@ -26,7 +26,6 @@ app.get(`/api/notes`, (req, res) =>
 );
 
 app.post(`/api/notes`, (req, res) => {
-    res.json({message: `New note is created: ${req.body.title}`});
     console.log(req.body);
     const newNote = req.body;
     newNote.id = uniqID();
@@ -39,6 +38,7 @@ app.post(`/api/notes`, (req, res) => {
         fs.writeFile('./db/db.json', JSON.stringify(notesData), 'utf8', function (err) {
             if (err) throw err;
             console.log('Saved!');
+            res.json(notesData);
         });
     }});
 });
