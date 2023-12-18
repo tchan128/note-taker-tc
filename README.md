@@ -32,6 +32,8 @@ This is a note taker that allows users to create, view, and delete notes. This p
 ![image](https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![image](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
+As I am currently unable to deploy the app on Heroku, here is a link to showcase how the app functions: https://share.vidyard.com/watch/j6uJ5ACEzUe4VZq79SWoMh?
+
 ## Installation
 
 This project is deployed via Heroku where users can test out the functionalities. To install/use this project differently, user can clone this project and run it on their local computer. User should be able to run "node index.js" in the command line and open http://localhost:3001/ on their browser or Insomnia to test out the app. Other paths that users can test out is `/notes`, `/api/notes`, `/api/notes/:id`. 
@@ -44,8 +46,21 @@ This project is deployed via Heroku where users can test out the functionalities
 
 Users can use this project to help them create, view, and delete notes. In this project, they will be able to have an app that keeps track of their notes to stay organize. When an user presses "New Note" the title and text of the note will be saved and added to the existing list of notes they have shown on the left side. Once the note/task is completed, they are able to press the red trashcan icon on the left side to delete the note. If they press on the note itself, the user will be able to view the text of the note. User can access this app and control these action via the deployed app on Heroku. 
 
+Please view here for a demo of the app: https://share.vidyard.com/watch/j6uJ5ACEzUe4VZq79SWoMh?
+
 ## Visuals
 
+1. Homepage when user accesses http://localhost:3001/
+
+![Homepage](<Screenshot 2023-12-18 at 5.00.07 PM.png>)
+
+2. Viewing pre-existing notes 
+
+![Existing Notes](<Screenshot 2023-12-18 at 5.01.00 PM.png>)
+
+3. Creating a new note
+
+![New Note](<Screenshot 2023-12-18 at 5.01.37 PM.png>)
 
 ## Contributions
 
